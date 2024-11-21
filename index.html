@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="SMFC,sfmc, SOAP API,text/html; charset=UTF-8" http-equiv="Content-Type" name="sfmc">
+    <meta name="author" content="Sasee Prasad. SFMC Technical Architect, Author @AMPScriptify">
+    <title>Create JWT Assertion</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrsasign/10.1.13/jsrsasign-all-min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>AMPScriptify JWT Assertion</h1>
+        <form id="jwtForm">
+            <div class="form-group">
+                <label for="issuer">Issuer (iss):</label>
+                <input type="text" id="issuer" name="issuer" required placeholder="Enter issuer">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject (sub):</label>
+                <input type="email" id="subject" name="subject" required placeholder="Enter subject email">
+            </div>
+            <div class="form-group">
+                <label for="audience">Audience (aud):</label>
+                <input type="url" id="audience" name="audience" required placeholder="Enter audience URL">
+            </div>
+            <div class="form-group">
+                <label for="expiry">Expiration Time (in seconds):</label>
+                <input type="number" id="expiry" name="expiry" required placeholder="Enter expiration time in seconds" min="1">
+            </div>
+            <div class="form-group">
+                <label for="privateKey">Private Key:</label>
+                <textarea id="privateKey" name="privateKey" required placeholder="Enter your private key" rows="8"></textarea>
+            </div>
+            <button type="submit">Generate JWT</button>
+        </form>
+
+        <h2>Generated JWT Assertion:</h2>
+        <textarea id="jwtOutput" readonly></textarea>
+    </div>
+    <footer>
+        <p>&copy; 2024 Shashi Prasad. All rights reserved.</p>
+    </footer>
+    
+    <!-- Link to external JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
