@@ -7,72 +7,75 @@
 
 /* CSS Variables for easy customization */
 :root {
-    --primary-color: #4b9cd3; /* Light Blue for main accents */
-    --secondary-color: #2a7d9f; /* Deeper Blue for buttons */
-    --accent-color: #ffb347; /* Soft Gold for highlights */
-    --background-color: #f9f9f9; /* Light Gray Background */
-    --container-bg-color: #ffffff; /* White Container */
-    --text-color: #333333; /* Dark Gray Text */
-    --border-color: #e0e0e0; /* Light Border */
-    --focus-outline: 2px solid #ffb347; /* Gold Focus Outline */
-    --footer-bg-color: #1f2a34; /* Dark Blue for Footer */
-    --footer-text-color: #ffffff; /* White Text for Footer */
-    --button-hover-color: #3d8a9c; /* Hover Color for Buttons */
-    --button-active-color: #2f5c6b; /* Active Button Color */
-    --button-disabled-bg: #c6c6c6; /* Disabled Button Background */
+    --primary-color: #4b9cd3; /* Elegant, refined blue */
+    --secondary-color: #2a7d9f; /* Deeper, subtle blue */
+    --accent-color: #ffb347; /* Warm gold accent */
+    --background-color: #f1f1f1; /* Soft light gray background like Apple */
+    --container-bg-color: #ffffff; /* Crisp white container */
+    --text-color: #333333; /* Dark gray text for easy readability */
+    --border-color: #e0e0e0; /* Light gray for soft borders */
+    --focus-outline: 2px solid #ffb347; /* Soft gold focus outline */
+    --footer-bg-color: #1f2a34; /* Dark blue footer */
+    --footer-text-color: #ffffff; /* White footer text */
+    --button-hover-color: #4c8cbf; /* Hover with subtle blue */
+    --button-active-color: #357190; /* Slightly deeper blue for active */
+    --button-disabled-bg: #d6d6d6; /* Light gray for disabled buttons */
 }
 
 /* Body */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--background-color);
+    font-family: 'Roboto', sans-serif; /* Cleaner, more modern font */
+    background: linear-gradient(to top, #f1f1f1, #ffffff); /* Subtle gradient from light gray to white */
     color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     position: relative;
-    padding-bottom: 60px; /* Space for the footer */
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-bottom: 40px; /* Reduced space for footer */
+    line-height: 1.6; /* Spacing between lines for readability */
+    overflow: hidden; /* Prevents scrollbars */
 }
 
 /* Main Container */
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    max-width: 480px; /* Narrower, professional width */
     width: 100%;
     background-color: var(--container-bg-color);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    border-radius: 8px; /* Softer rounded corners */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+    padding: 24px; /* Slightly reduced padding */
     overflow-y: auto;
     transition: background-color 0.3s ease;
-    animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.5s ease-out 0.3s;
+    max-height: calc(100vh - 60px); /* Ensures it fits the screen height */
 }
 
 /* Header */
 h1 {
-    font-size: 2.8rem;
+    font-size: 1.8rem; /* Moderate size for a clean, balanced look */
     text-align: center;
     color: var(--primary-color);
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    font-weight: 600; /* Reduced font weight for a more refined feel */
+    letter-spacing: 0.5px; /* Subtle letter spacing */
+    margin-bottom: 16px; /* Smaller margin for a more compact header */
+    text-transform: uppercase;
+    font-family: 'Georgia', serif; /* Elegant serif font */
 }
 
 /* Form styles */
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px; /* Slightly wider gap for clean separation */
 }
 
 /* Input fields and textareas */
 input, textarea {
-    font-size: 1rem;
-    padding: 16px;
+    font-size: 0.9rem; /* Balanced font size for better readability */
+    padding: 14px; /* Subtle padding for comfortable input */
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background-color: #ffffff;
@@ -89,18 +92,25 @@ input:focus, textarea:focus {
     background-color: #f7f7f7;
 }
 
+/* Placeholder text style */
+input::placeholder, textarea::placeholder {
+    color: #bbb; /* Light gray for placeholder text */
+}
+
 /* Labels */
 label {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.9rem; /* Slightly larger label text */
+    font-weight: 500; /* Reduced weight for a cleaner look */
     color: var(--text-color);
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* Reduced margin for more compactness */
+    padding-left: 4px;
+    font-family: 'Georgia', serif;
 }
 
 /* Submit Button */
 button {
-    padding: 16px;
-    font-size: 1.1rem;
+    padding: 14px;
+    font-size: 1rem; /* Standard button size */
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -108,6 +118,9 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Adds a more formal feel to the button text */
 }
 
 button:hover {
@@ -123,20 +136,22 @@ button:active {
 button:disabled {
     background-color: var(--button-disabled-bg);
     cursor: not-allowed;
+    opacity: 0.7;
 }
 
 /* JWT Output Styling */
 #jwtOutput {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
-    padding: 16px;
+    font-size: 0.9rem;
+    padding: 14px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     width: 100%;
-    min-height: 200px;
+    min-height: 160px; /* Reduced height */
     resize: vertical;
     background-color: #f7f7f7;
     box-sizing: border-box;
+    font-style: italic;
 }
 
 /* Footer Styling */
@@ -144,14 +159,16 @@ footer {
     background-color: var(--footer-bg-color);
     color: var(--footer-text-color);
     text-align: center;
-    padding: 20px;
-    font-size: 1rem;
+    padding: 16px;
+    font-size: 0.9rem; /* Balanced footer font size */
     font-weight: 400;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px; /* Adding slight letter spacing for elegance */
 }
 
 /* Footer Links or Copyright */
@@ -176,27 +193,27 @@ footer p {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     button {
-        padding: 14px;
-        font-size: 1.1rem;
+        padding: 12px;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        width: 95%;
-        padding: 15px;
+        width: 90%;
+        padding: 16px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     button {
         padding: 12px;
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
 }
